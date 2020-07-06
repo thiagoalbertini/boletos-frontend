@@ -109,7 +109,7 @@ function App() {
                     type="email"
                     fullWidth
                     value={tipo}
-                    onChange={e => setboleto(e.target.value)}
+                    onChange={e => setTipo(e.target.value)}
                 />
                 <TextField
                     margin="dense"
@@ -118,7 +118,7 @@ function App() {
                     type="email"
                     fullWidth
                     value={valor}
-                    onChange={e => SetDescricao(e.target.value)}
+                    onChange={e => SetValor(e.target.value)}
                 />
 
             </DialogContent>
@@ -134,3 +134,4 @@ function App() {
         </>
     );
 }
+export default App;
