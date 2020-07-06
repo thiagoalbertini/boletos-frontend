@@ -37,11 +37,11 @@ function App() {
     const closeModal = () => setOpen(false);
 
      function addboleto() { 
-         const name = boleto;
-         const desc = descricao;
-         api.post('/boleto', { boleto: name, descricao: desc, concluido: false }).then((response) => {
-            setboleto('');
-            SetDescricao('');
+         const name = tipo;
+         const valor = valor;
+         api.post('/boleto', { tipo: name, valor: valor, open: false }).then((response) => {
+            setTipo('');
+            SetValor('');
             setOpen(false);
             loadData();
         })
@@ -67,19 +67,19 @@ function App() {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell align="left">Titulo</TableCell>
-            <TableCell align="left">Descricacao</TableCell>
-            <TableCell align="left">Concluido</TableCell>
+            <TableCell align="left">Tipo</TableCell>
+            <TableCell align="left">Valor</TableCell>
+            <TableCell align="left">Pago</TableCell>
             <TableCell align="left"> </TableCell>
           </TableRow>
         </TableHead>
                 {lista.map(item => (
                     <TableRow key={item.id}>
                         <TableCell>{item.id}</TableCell>
-                        <TableCell>{item.boleto}</TableCell>
-                        <TableCell>{item.descricao}</TableCell>
+                        <TableCell>{item.tipo}</TableCell>
+                        <TableCell>{item.valor}</TableCell>
                         <TableCell>
-                            <input type="checkbox" checked={item.concluido} onChange={() => markAsDone(item.id)}/>
+                            <input type="checkbox" checked={item.open} onChange={() => markAsDone(item.id)}/>
                         </TableCell>
                         <TableCell>
                             <Button variant="outlined" size="small" color="secondary" onClick={() => deleteboleto(item.id)}>Apagar</Button>
@@ -99,25 +99,25 @@ function App() {
             <DialogTitle id="form-dialog-title">Novo boleto</DialogTitle>
             <DialogContent>
                 <DialogContentText>
-                    Digite qual problema esta ocorrendo.
+                    Tipo de boleto
                 </DialogContentText>
                 <TextField
                     autoFocus
                     margin="dense"
-                    id="name"
+                    id="tipo"
                     label="boleto"
                     type="email"
                     fullWidth
-                    value={boleto}
+                    value={tipo}
                     onChange={e => setboleto(e.target.value)}
                 />
                 <TextField
                     margin="dense"
                     id="desc"
-                    label="Descricao"
+                    label="Valor"
                     type="email"
                     fullWidth
-                    value={descricao}
+                    value={valor}
                     onChange={e => SetDescricao(e.target.value)}
                 />
 
