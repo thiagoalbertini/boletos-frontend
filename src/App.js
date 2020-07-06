@@ -106,7 +106,7 @@ function App() {
                     margin="dense"
                     id="tipo"
                     label="Tipo"
-                    type="email"
+                    type="text"
                     fullWidth
                     value={tipo}
                     onChange={e => setTipo(e.target.value)}
@@ -115,7 +115,7 @@ function App() {
                     margin="dense"
                     id="desc"
                     label="Valor"
-                    type="email"
+                    type="text"
                     fullWidth
                     value={valor}
                     onChange={e => SetValor(e.target.value)}
