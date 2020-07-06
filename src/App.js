@@ -38,8 +38,8 @@ function App() {
 
      function addboleto() { 
          const name = tipo;
-         const valor = valor;
-         api.post('/boleto', { tipo: name, valor: valor, open: false }).then((response) => {
+         const val = valor;
+         api.post('/boleto', { tipo: name, val: valor, open: false }).then((response) => {
             setTipo('');
             SetValor('');
             setOpen(false);
