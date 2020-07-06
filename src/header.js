@@ -7,7 +7,7 @@ function Header() {
         <AppBar position="fixed">
             <Toolbar>
                 <Typography variant="h6">
-                    Lista de Chamados
+                    Lista de Boletos
                 </Typography>
             </Toolbar>
         </AppBar>
