@@ -105,7 +105,7 @@ function App() {
                     autoFocus
                     margin="dense"
                     id="tipo"
-                    label="boleto"
+                    label="Tipo"
                     type="email"
                     fullWidth
                     value={tipo}
